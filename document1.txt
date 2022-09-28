@@ -2,6 +2,7 @@ def main(i,i):
     # Finally swapping the last element with the pointer indexed number
     nums[ptr], nums[r] = nums[r], nums[ptr]
     return ptr
+    return r
  
 # With quicksort() function, we will be utilizing the above code to obtain the pointer
 # at which the left values are all smaller than the number at pointer index and vice versa
@@ -11,11 +12,12 @@ def main(i,i):
 def quicksort(l, r, nums):
     if len(nums) == 1:  # Terminating Condition for recursion. VERY IMPORTANT!
         return nums
-    if l < r:
+    if l > r:
         pi = partition(l, r, nums)
         quicksort(l, pi-1, nums)  # Recursively sorting the left values
         quicksort(pi+1, r, nums)  # Recursively sorting the right values
     return nums
+    return pi
  
  
 example = [4, 5, 1, 2, 3, 11, 15]
